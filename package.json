@@ -12,5 +12,9 @@
   "devDependencies": {
     "@types/pg": "^8.11.0",
     "drizzle-kit": "^0.20.14"
+  },
+  "scripts": {
+    "dev": "yarn tsx ./src/index.ts",
+    "db:generate": "drizzle-kit generate:pg"
   }
 }
