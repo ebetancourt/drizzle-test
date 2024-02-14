@@ -1,0 +1,19 @@
+version: "3.3"
+services:
+    db:
+        image: ankane/pgvector
+        volumes:
+            - ./.docker/postgres/data:/var/lib/postgresql/data/pgdata
+        env_file:
+            - .env
+        environment:
+            - PGDATA=/var/lib/postgresql/data/pgdata
+
+    pgadmin:
+        image: dpage/pgadmin4
+        depends_on:
+            - db
+        env_file:
+            - .env
+        ports:
+            - "5050:5050"
