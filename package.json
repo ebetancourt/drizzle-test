@@ -16,6 +16,8 @@
   },
   "scripts": {
     "dev": "yarn tsx ./src/index.ts",
+    "db:start": "docker-compose up -d",
+    "db:stop": "docker-compose stop",
     "db:generate": "drizzle-kit generate:pg",
     "db:migrate": "yarn tsx ./src/db/migrate.ts",
     "db:studio": "yarn drizzle-kit studio --port 3000 --verbose"
