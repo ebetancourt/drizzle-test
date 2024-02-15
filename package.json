@@ -20,6 +20,7 @@
     "db:stop": "docker-compose stop",
     "db:generate": "drizzle-kit generate:pg",
     "db:migrate": "yarn tsx ./src/db/migrate.ts",
+    "db:seed": "yarn tsx ./src/db/seed.ts",
     "db:studio": "yarn drizzle-kit studio --port 3000 --verbose"
   }
 }
