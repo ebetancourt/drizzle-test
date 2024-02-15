@@ -5,5 +5,3 @@ export function hello(who: string = world): string {
 }
 
 console.log(hello(`Elliot`)); // Hello world!
-
-import { db } from './db';
