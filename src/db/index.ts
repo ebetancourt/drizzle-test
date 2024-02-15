@@ -1,5 +1,6 @@
-import { drizzle } from "drizzle-orm/node-postgres";
+import { NodePgDatabase, drizzle } from "drizzle-orm/node-postgres";
 import { Client } from "pg";
+import * as schema from "./models";
 
 export const dbCredentials = {
     user: "postgres",
@@ -10,10 +11,11 @@ export const dbCredentials = {
 };
 
 const client = new Client(dbCredentials);
+export type DBConnection = NodePgDatabase<typeof schema>;
 
 export async function getConnection() {
     await client.connect();
-    return drizzle(client);
+    return drizzle(client, { schema });
 }
 
 export * from './models';

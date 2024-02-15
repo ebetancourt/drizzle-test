@@ -33,7 +33,7 @@ const main = async () => {
     const newPosts = await db.insert(posts).values(postData).returning({ insertedId: posts.id });
     console.log(`Created ${newPosts.length} posts.`);
     console.log("Done seeding posts.");
-
+    return process.exit(0);
 };
 
 main();
