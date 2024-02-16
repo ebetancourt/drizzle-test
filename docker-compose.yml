@@ -10,12 +10,3 @@ services:
             - PGDATA=/var/lib/postgresql/data/pgdata
         ports:
             - "5432:5432"
-
-    pgadmin:
-        image: dpage/pgadmin4
-        depends_on:
-            - db
-        env_file:
-            - .env
-        ports:
-            - "5050:5050"
