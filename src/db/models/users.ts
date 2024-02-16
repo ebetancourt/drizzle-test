@@ -10,6 +10,7 @@ export const users = pgTable('users', {
     role: text('role').$type<'admin' | 'customer'>(),
     createdAt: timestamp('created_at').defaultNow().notNull(),
     updatedAt: timestamp('updated_at').defaultNow().notNull(),
+    company: text('company'),
 });
 
 export const usersRelations = relations(users, ({ many }) => ({
